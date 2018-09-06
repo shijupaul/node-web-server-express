@@ -19,13 +19,13 @@ app.use((req, res, next) => {
   fs.appendFileSync('server.log', log + '\n');
   next();
 });
-app.use((req, res, next) => {
-  console.log('redirecting to maintenance page');
-  res.render('maintenance.hbs', {
-    messageHeader: 'in maintenance',
-    messageBody: 'please come back later'
-  });
-});
+// app.use((req, res, next) => {
+//   console.log('redirecting to maintenance page');
+//   res.render('maintenance.hbs', {
+//     messageHeader: 'in maintenance',
+//     messageBody: 'please come back later'
+//   });
+// });
 
 
 // app.get('/', (req, res) => {
@@ -46,6 +46,12 @@ app.get('/', (req,res) => {
 app.get('/about', (req,res) => {
   res.render('about.hbs', {
     pagetTitle: 'About page...'
+  });
+});
+
+app.get('/newProjects', (req,res) => {
+  res.render('newProjects.hbs', {
+    portfolio: 'It\'s portfolio... page'
   });
 });
 
